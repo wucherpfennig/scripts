@@ -1,4 +1,4 @@
-scripts
+More or less usefull scripts
 =======
 
-usefull scripts and configs
+   ln -s Scripts/bash/bashrc ~/.bashrc
