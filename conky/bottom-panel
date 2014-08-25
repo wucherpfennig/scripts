@@ -1,0 +1,61 @@
+# Debug
+
+#WINDOW OPTIONS
+double_buffer yes
+use_xft yes
+xftfont 123:size=1
+own_window yes
+own_window_argb_visual true
+own_window_type override
+own_window_transparent no
+own_window_colour 121212
+own_window_type panel
+own_window_hints above,undecorate,sticky,skip_taskbar,skip_pager 
+
+#POSITION
+alignment bottom_right
+minimum_size 1920 0
+gap_x 0
+gap_y 0
+
+#BORDERS
+draw_borders no
+
+#SHADES
+draw_shades no
+
+# Updates
+update_interval 1
+cpu_avg_samples 10
+net_avg_samples 10
+
+# Font & Color
+xftalpha 1.0
+uppercase no
+color1 9BCC4F
+color2 FFFFFF 
+
+
+# Output
+TEXT
+$color1${font DejaVu Sans:bold:size=8}Battery: $color2${font DejaVu Sans:normal:size=8}$battery_percent% $battery_time #
+${if_existing /proc/net/route wlp3s0}#
+$color1${font DejaVu Sans:bold:size=8}Wlan: $color2${font DejaVu Sans:normal:size=8} D ${downspeedgraph wlp3s0 8,30 -l} U ${upspeedgraph wlp3s0 8,30}  #
+$color1${font DejaVu Sans:bold:size=8}Net: $color2${font DejaVu Sans:normal:size=8}${wireless_essid wlp3s0}  #
+$color1${font DejaVu Sans:bold:size=8}IP int: $color2${font DejaVu Sans:normal:size=8}${addr wlp3s0}  #
+${endif}#
+${if_existing /proc/net/route enp0s25}#
+$color1${font DejaVu Sans:bold:size=8}LAN: $color2${font DejaVu Sans:normal:size=8} D ${downspeedgraph enp0s25 8,30 -l} U ${upspeedgraph enp0s25 8,30 -l}  #
+$color1${font DejaVu Sans:bold:size=8}IP int: $color2${font DejaVu Sans:normal:size=8}${addr enp0s25}  #
+$color1${font DejaVu Sans:bold:size=8}IP ext: $color2${font DejaVu Sans:normal:size=8}${execi 3600 wget -O - http://ip.tupeux.com | tail}  #
+${endif}#
+$color1${font DejaVu Sans:bold:size=8}Fan: $color2${font DejaVu Sans:normal:size=8}${execi 1 sensors | grep fan1 | cut -c14-22}  #
+$color1${font DejaVu Sans:bold:size=8}CPU: $color2${font DejaVu Sans:normal:size=8}${execi 5 sensors | grep Physical | cut -c17-24}  -  $freq MHz $cpu%  ${cpugraph 8,30 -l}  #
+$color1${font DejaVu Sans:bold:size=8}RAM: $color2${font DejaVu Sans:normal:size=8}$mem $memperc% ${membar 8,30}  #
+$color1${font DejaVu Sans:bold:size=8}Root: $color2${font DejaVu Sans:normal:size=8} ${fs_size /} ${fs_used_perc /}% ${fs_bar 8,30 /}  #
+$color1${font DejaVu Sans:bold:size=8}Home: $color2${font DejaVu Sans:normal:size=8} ${fs_size /home} ${fs_used_perc /home}% ${fs_bar 8,30 /home}  #
+$color1${font DejaVu Sans:bold:size=8}Data: $color2${font DejaVu Sans:normal:size=8} ${fs_size /data} ${fs_used_perc /data}% ${fs_bar 8,30 /data}  #
+${alignr 20}#
+$color2${time %d %B %Y} ${time %T} #
+$color1${font DejaVu Sans:bold:size=8}Kernel: $color2${font DejaVu Sans:normal:size=8}${kernel}  #
+$color1${font DejaVu Sans:bold:size=8}Online: $color2${font DejaVu Sans:normal:size=8}${uptime_short}  
