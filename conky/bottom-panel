@@ -15,7 +15,7 @@ own_window_hints above,undecorate,sticky,skip_taskbar,skip_pager
 #POSITION
 alignment bottom_right
 minimum_size 1920 0
-gap_x 0
+gap_x 5
 gap_y 0
 
 #BORDERS
@@ -58,4 +58,4 @@ $color1${font DejaVu Sans:bold:size=8}Data: $color2${font DejaVu Sans:normal:siz
 ${alignr 20}#
 $color2${time %d %B %Y} ${time %T} #
 $color1${font DejaVu Sans:bold:size=8}Kernel: $color2${font DejaVu Sans:normal:size=8}${kernel}  #
-$color1${font DejaVu Sans:bold:size=8}Online: $color2${font DejaVu Sans:normal:size=8}${uptime_short}  
+$color1${font DejaVu Sans:bold:size=8}Online: $color2${font DejaVu Sans:normal:size=8}${uptime_short}
