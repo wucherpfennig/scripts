@@ -49,4 +49,4 @@ echo "extending hosts file"
 echo "\n127.0.0.1\t\t$localUrl" >> /etc/hosts
 echo "127.0.0.1\t\twww.$localUrl\n" >> /etc/hosts
 
-echo "DONE!!!"
+echo "DONE!!!\n"
