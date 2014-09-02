@@ -8,7 +8,7 @@ own_window yes
 own_window_argb_visual true
 own_window_type override
 own_window_transparent no
-own_window_colour 121212
+own_window_colour 1A1A1A
 own_window_type panel
 own_window_hints above,undecorate,sticky,skip_taskbar,skip_pager 
 
@@ -32,7 +32,7 @@ net_avg_samples 10
 # Font & Color
 xftalpha 1.0
 uppercase no
-color1 9BCC4F
+color1 0092BF
 color2 FFFFFF 
 
 
