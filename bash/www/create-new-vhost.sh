@@ -19,12 +19,11 @@ echo -e "*** please enter project name:"
 read projectName
 
 # get local url
-echo -e "please enter local url"
+echo -e "*** please enter local url"
 read localUrl
 
 # site root
 echo "*** please provide project root folder - default path is:"
-echo $operationSystem
 if [[ "$operationSystem" == 1 ]]; then
     DocumentRoot="/Users/"$userName"/Sites/"$projectName
 fi
@@ -61,7 +60,7 @@ touch $VhostRoot"/"$localUrl
 echo -e "<VirtualHost *:80>\nServerName $localUrl\nDocumentRoot $DocumentRoot\n\n\t<Directory $DocumentRoot>\n\t\tAllowOverride All\n\t\tOrder allow,deny\n\t\tAllow from all\n\t</Directory>\n\n</VirtualHost>" > $VhostRoot"/"$localUrl
 
 echo -e "extending hosts file"
-echo -e "\n127.0.0.1\t\t$localUrl" >> /etc/hosts
+echo -e "127.0.0.1\t\t$localUrl" >> /etc/hosts
 echo -e "127.0.0.1\t\twww.$localUrl\n" >> /etc/hosts
 
 echo -e "DONE!!!\n"
