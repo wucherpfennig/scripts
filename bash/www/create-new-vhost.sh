@@ -82,4 +82,16 @@ echo -e "127.0.0.1\t\twww.$localUrl\n" >> /etc/hosts
 
 echo -e "*******************"
 echo -e "DONE!!!\n"
-echo -e "RESTART your webserver\n"
+
+echo -e "*******************"
+echo -e "trying to restart you webserver"
+if [[ "$operationSystem" == 1 ]]; then
+    echo -e "you are using osx as os: resetarting apache"
+    apachectl -e info -k restart
+fi
+if [[ "$operationSystem" == 2 ]]; then
+    echo -e "you are using unix as os: resetarting httpd"
+    httpd restart
+fi
+
+
