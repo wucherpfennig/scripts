@@ -8,11 +8,14 @@ fi
 userName=${SUDO_USER:-$USER}
 
 # os detection
-echo -e "*** please select your operation system: \n"
+echo -e "*** please select your operating system: \n"
 echo -e " 1) OSX\n(Assumtion: working with apache)\n"
 echo -e " 2) LINUX\n(Assumtion: working with httpd)\n"
-echo -e "(1 = default, 2): "
-read operationSystem
+echo -e "choose: (1 default, 2): "
+read operatingSystem
+if [[ "$operatingSystem" == '' ]]; then
+    operatingSystem=1
+fi
 
 # get project name
 echo -e "*** please enter project name: (Domain Name like: netnode.ch)"
@@ -32,10 +35,10 @@ fi
 
 # site root
 echo "*** please provide project root folder - default path is:"
-if [[ "$operationSystem" == 1 ]]; then
+if [[ "$operatingSystem" == 1 ]]; then
     DocumentRoot="/Users/"$userName"/Sites/"$projectName
 fi
-if [[ "$operationSystem" == 2 ]]; then
+if [[ "$operatingSystem" == 2 ]]; then
     DocumentRoot="/home/"$userName"/public_html/"$projectName
 fi
 echo "$DocumentRoot"
@@ -48,10 +51,10 @@ if [[ "$status" == 'n' ]]; then
 fi
 
 echo "*** please provide custom vhost folder - default path is:"
-if [[ "$operationSystem" == 1 ]]; then
+if [[ "$operatingSystem" == 1 ]]; then
     VhostRoot="/etc/apache2/custom"
 fi
-if [[ "$operationSystem" == 2 ]]; then
+if [[ "$operatingSystem" == 2 ]]; then
     VhostRoot="/etc/httpd/conf/vhost"
 fi
 echo "$VhostRoot"
@@ -85,11 +88,11 @@ echo -e "DONE!!!\n"
 
 echo -e "*******************"
 echo -e "trying to restart you webserver"
-if [[ "$operationSystem" == 1 ]]; then
+if [[ "$operatingSystem" == 1 ]]; then
     echo -e "you are using osx as os: resetarting apache"
     apachectl -e info -k restart
 fi
-if [[ "$operationSystem" == 2 ]]; then
+if [[ "$operatingSystem" == 2 ]]; then
     echo -e "you are using unix as os: resetarting httpd"
     httpd restart
 fi
