@@ -9,18 +9,26 @@ userName=${SUDO_USER:-$USER}
 
 # os detection
 echo -e "*** please select your operation system: \n"
-echo -e " 1) OSX\n"
-echo -e " 2) LINUX\n"
+echo -e " 1) OSX\n(Assumtion: working with apache)\n"
+echo -e " 2) LINUX\n(Assumtion: working with httpd)\n"
 echo -e "(1 = default, 2): "
 read operationSystem
 
 # get project name
-echo -e "*** please enter project name:"
+echo -e "*** please enter project name: (Domain Name like: netnode.ch)"
 read projectName
 
 # get local url
-echo -e "*** please enter local url"
-read localUrl
+echo -e "*** please provide local url - default path is:"
+localUrl="lo."$projectName
+echo "$localUrl"
+echo "Is this url correct? (y/n):"
+read status
+if [[ "$status" == 'n' ]]; then
+    echo "please provide new local url"
+    read newUrl
+    localUrl=$newUrl
+fi
 
 # site root
 echo "*** please provide project root folder - default path is:"
@@ -55,12 +63,23 @@ if [[ "$status" == 'n' ]]; then
 	VhostRoot=$newVhostRoot
 fi
 
-echo "creating vhost file"
+echo -e "*******************"
+echo -e "creating vhost file"
 touch $VhostRoot"/"$localUrl
 echo -e "<VirtualHost *:80>\nServerName $localUrl\nDocumentRoot $DocumentRoot\n\n\t<Directory $DocumentRoot>\n\t\tAllowOverride All\n\t\tOrder allow,deny\n\t\tAllow from all\n\t</Directory>\n\n</VirtualHost>" > $VhostRoot"/"$localUrl
 
+
+echo "*******************"
+echo -e "backing up hosts file (hosts.bak)"
+cp /etc/hosts /etc/hosts.bak
+
+
+echo -e "*******************"
 echo -e "extending hosts file"
+cp /etc/hosts /etc/hosts.bak
 echo -e "127.0.0.1\t\t$localUrl" >> /etc/hosts
 echo -e "127.0.0.1\t\twww.$localUrl\n" >> /etc/hosts
 
+echo -e "*******************"
 echo -e "DONE!!!\n"
+echo -e "RESTART your webserver\n"
