@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Features](#features)
+  - [Create](#create)
+  - [Update / Revert](#update--revert)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Features
 
 ### Create
@@ -8,11 +18,11 @@
 
 ### Update / Revert
 1. Update overriden changes with
-    drush fu feature_name
+     drush fu feature_name
 2. Commit changes to git
 3. Checkout latest version of repo
 4. Revert to latest change
-    drush fr feature_name
+     drush fr feature_name
 
 *Rember*
 * "revert" == code to db

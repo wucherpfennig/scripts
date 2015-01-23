@@ -2,10 +2,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Code Samples and Snippets](#code-samples-and-snippets)
+- [Drupal](#drupal)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Code Samples and Snippets
-
-This Contains some usefull tips & tricks
+# Drupal
