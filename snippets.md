@@ -47,3 +47,27 @@ Useful code & snippets
 
 * "revert" == code to db
 * "update" == db to code
+
+# CSS / SASS / Compass
+
+## Generate Helper Font Classes
+
+**Usage:** `div.font-size-small`
+
+```sass
+$base-font-size: 100%;
+$font-size-normal: $base-font-size;
+$font-size-tiny: $font-size-normal * 0.7;
+$font-size-small: $font-size-normal * 0.85;
+$font-size-big: $font-size-normal * 1.5;
+$font-size-huge: $font-size-normal * 2.5;
+
+$font-sizes: "tiny" $font-size-tiny, "small" $font-size-small, "normal" $font-size-normal, "big" $font-size-big, "huge" $font-size-huge;
+@each $size in $font-sizes {
+  $key: nth($size, 1);
+  $value: nth($size, 2);
+  .font-size-#{$key} {
+    font-size: $value;
+  }
+}
+```
