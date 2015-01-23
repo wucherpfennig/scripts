@@ -6,6 +6,8 @@
   - [Features](#features)
     - [Create](#create)
     - [Update / Revert](#update--revert)
+- [CSS / SASS / Compass](#css--sass--compass)
+  - [Generate Helper Font Classes](#generate-helper-font-classes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
