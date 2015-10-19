@@ -55,7 +55,7 @@ if [[ "$operatingSystem" == 1 ]]; then
     VhostRoot="/etc/apache2/custom"
 fi
 if [[ "$operatingSystem" == 2 ]]; then
-    VhostRoot="/etc/httpd/conf/vhost"
+    VhostRoot="/etc/httpd/conf/vhosts"
 fi
 echo "$VhostRoot"
 echo "Is this path correct? (y/n):"
