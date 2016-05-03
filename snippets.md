@@ -13,6 +13,14 @@
 
 Useful code & snippets
 
+# How to Setup a LAMP Stack
+
+1. Install vagrant & virtualbox
+
+2. setup vagrant machine
+
+
+
 # Drupal
 
 ## Features
