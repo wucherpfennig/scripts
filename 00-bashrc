@@ -1,4 +1,6 @@
+# Fix display issues
 export TERM="xterm-256color"
 
+# tmux settings
 alias tmux="tmux -2"
-alias tmux="~/Scritps/01-tmux-devStation"
+alias ds="~/Scripts/01-tmux-devStation"
