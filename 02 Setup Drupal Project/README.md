@@ -12,6 +12,24 @@ This is a quick guide to setup a drupal dev enviroment
 * https://github.com/jakubgg/scotch-box4dev/blob/master/Vagrantfile
 * https://www.carnaghan.com/2015/05/drupal-development-environment-in-less-than-10-minutes/ 
 
+## Idea
+Setting up a dev enviromnent is an annoying and repeating task. With this README
+we do speed up this process a little.
+
+**Assumptions**
+* Project resides in a folder structure as follows:
+    ```
+    .
+    ..
+    .git
+    .gitignore
+    public/
+    example.com.aliases.drushrc.php
+    .vagrant
+    Vagrantfile
+    ```
+
+* all files a git controlled
 
 ## Installation
 
