@@ -29,4 +29,26 @@
     ssh-copy-id user@host
     ```
 
+5. Open ```.bashrc``` on the vagrant machine go and add to the end of the file
+    ```
+    cd /var/www/public
+    ```
 
+6. Install ```php5-xdebug```
+    ```
+    sudo apt-get update
+    sudo apt-get install php5-xdebug
+    sudo service apache2 restart
+    ```
+    Add the following to your ```/etc/php5/apache2/php.ini```
+    ```
+    [xdebug]
+    zend_extension="/usr/lib/php5/20131226/xdebug.so"
+    xdebug.remote_enable=on
+    xdebug.remote_connect_back=on
+    xdebug.remote_host=192.168.33.10
+    ```
+    restart the server again
+    ```
+    sudo service apache2 restart
+    ```
