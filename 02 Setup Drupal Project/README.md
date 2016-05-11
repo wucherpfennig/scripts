@@ -1,5 +1,13 @@
 # How to setup a new Drupal Project
 
+This is a quick guide to setup a drupal dev enviroment
+
+**Sources**
+* https://github.com/scotch-io/scotch-box
+* https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one 
+
+## Installation
+
 1. Install Vagrant
     ```
     vagrant plugin install vagrant-vbguest vagrant-share
@@ -52,3 +60,7 @@
     ```
     sudo service apache2 restart
     ```
+
+7. Setup a drupal 
+
+## Important Commands
