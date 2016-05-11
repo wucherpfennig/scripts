@@ -2,9 +2,16 @@
 
 This is a quick guide to setup a drupal dev enviroment
 
+**TODO**
+* Provide a decent drush alias file
+* Prodive provisioning script
+
 **Sources**
 * https://github.com/scotch-io/scotch-box
 * https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one 
+* https://github.com/jakubgg/scotch-box4dev/blob/master/Vagrantfile
+* https://www.carnaghan.com/2015/05/drupal-development-environment-in-less-than-10-minutes/ 
+
 
 ## Installation
 
