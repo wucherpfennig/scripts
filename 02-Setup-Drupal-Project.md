@@ -86,7 +86,7 @@ we do speed up this process a little.
     sudo service apache2 restart
     ```
 
-7. Setup a drush alias 
+7. Setup a (drush alias)[exmpales/example.com.aliases.drushrc.php] and symlink it on the vagrant box and on your local host
 
 ## Important Commands
 
