@@ -89,3 +89,13 @@ we do speed up this process a little.
 7. Setup a drupal 
 
 ## Important Commands
+
+### Sync Database
+```
+drush sql-sync @remote @local --create-db
+```
+
+### Sync Files
+```
+drush rsync @remote:%files @local:%files
+```
