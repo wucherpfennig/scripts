@@ -86,7 +86,7 @@ we do speed up this process a little.
     sudo service apache2 restart
     ```
 
-7. Setup a drupal 
+7. Setup a drush alias 
 
 ## Important Commands
 
